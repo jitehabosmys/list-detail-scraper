@@ -1,0 +1,10 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "agent": {
+    "build": {
+      "mode": "primary",
+      "model": "opencode-go/deepseek-v4-flash",
+      "prompt": "你是 list-detail-scraper 项目的助手，这是一个通用的列表页→详情页爬取 Agent Skill。回答问题时结合项目中的 SKILL.md 和 scripts/ 下的示例脚本来解释。"
+    }
+  }
+}
