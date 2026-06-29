@@ -34,7 +34,11 @@ uv run python scripts/fca.py
 ## 作为 Agent Skill 安装
 
 ```bash
+# OpenCode
 npx skills add jitehabosmys/list-detail-scraper -a opencode
+
+# Claude Code
+npx skills add jitehabosmys/list-detail-scraper -a claude
 ```
 
 ## 项目结构
