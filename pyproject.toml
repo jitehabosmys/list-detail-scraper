@@ -1,0 +1,13 @@
+[project]
+name = "list-detail-scraper"
+version = "0.1.0"
+description = "通用列表页→详情页爬取 SOP 及示例脚本"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "beautifulsoup4>=4.15.0",
+    "curl-cffi>=0.15.0",
+    "httpx>=0.28.0",
+    "lxml>=6.1.0",
+    "tqdm>=4.68.0",
+]
