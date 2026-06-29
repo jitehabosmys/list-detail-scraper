@@ -2,6 +2,8 @@
 
 通用列表页→详情页爬取 Agent Skill，基于 OpenCode 构建，兼容任意 Agent Skill 平台。
 
+遵循 inspect（识别数据源）→ analyze（选择访问策略）→ generate（生成脚本）→ run（执行采集）→ verify/fix（验证与修复）SOP。
+
 An [Agent Skill](https://agentskills.io) for scraping list-page → detail-page websites. Originally built for [OpenCode](https://opencode.ai), compatible with Claude Code, Cursor, Codex, and more.
 
 ## 支持的网站类型
