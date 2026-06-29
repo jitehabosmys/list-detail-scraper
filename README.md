@@ -1,8 +1,8 @@
 # list-detail-scraper
 
-爬取具有**列表页→详情页**结构的网站，提取结构化字段。
+通用列表页→详情页爬取 Agent Skill，基于 OpenCode 构建，兼容任意 Agent Skill 平台。
 
-这是一个 [Agent Skill](https://agentskills.io) — 既是给 AI coding agent 的 SOP 指令，也是一个可直接运行的 Python 爬虫工具箱。
+An [Agent Skill](https://agentskills.io) for scraping list-page → detail-page websites. Originally built for [OpenCode](https://opencode.ai), compatible with Claude Code, Cursor, Codex, and more.
 
 ## 支持的网站类型
 
@@ -17,30 +17,31 @@
 ## 快速开始
 
 ```bash
+git clone git@github.com:jitehabosmys/list-detail-scraper.git
+cd list-detail-scraper
 uv sync
-cd scripts
 
 # SSR HTML 示例 (SEC)
-uv run python sec.py
+uv run python scripts/sec.py
 
-# JSON API 示例 (THE Rankings)
-uv run python the_rankings.py
+# JSON API 示例 (THE 世界大学排名)
+uv run python scripts/the_rankings.py
 
 # Sitemap 旁路示例 (FCA)
-uv run python fca.py
+uv run python scripts/fca.py
 ```
 
-脚本默认只爬前 2 页验证，确认无误后加 `--all` 参数全量运行：
+## 作为 Agent Skill 安装
 
 ```bash
-uv run python sec.py --all
+npx skills add jitehabosmys/list-detail-scraper -a opencode
 ```
 
 ## 项目结构
 
 ```
 list-detail-scraper/
-├── SKILL.md              # Agent Skill 核心 SOP
+├── SKILL.md              # 核心 SOP 指令
 ├── scripts/
 │   ├── base_ssr.py       # SSR 站通用基类 (限流/重试/并发/保存)
 │   ├── sec.py            # [SSR HTML] SEC 美国证券交易委员会
@@ -51,18 +52,9 @@ list-detail-scraper/
 ├── examples/
 │   └── sample_output.json
 ├── pyproject.toml
+├── uv.lock
+├── LICENSE
 └── README.md
-```
-
-## 作为 Agent Skill 使用
-
-```bash
-# 使用 npx skills 安装到任意兼容 agent
-npx skills add <你的用户名>/list-detail-scraper --agent opencode
-npx skills add <你的用户名>/list-detail-scraper --agent claude-code
-
-# 或直接指定 skill
-npx skills add <你的用户名>/list-detail-scraper --skill list-detail-scraper -a claude-code
 ```
 
 ## License
